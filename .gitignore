@@ -1,0 +1,14 @@
+babymoss-daq-fpga-firmware/
+data/
+
+eudaq2/
+!eudaq2/user/ITS3/misc/**
+!eudaq2/user/ITS3/misc/
+
+logs/
+trigger/
+
+sw/
+!sw/config
+!sw/config/**
+trigger/
