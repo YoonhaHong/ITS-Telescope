@@ -1,0 +1,51 @@
+{
+    "ts_config": "/home/palpidefs/testbeam/TB_August_2024/sw/config/ts_config_raiser.json5",
+    "n_triggers": 100000,
+    "enabled_units": [
+        "bb"
+    ],
+    "seed": "random",
+    "override_registers": {
+        "bb": {
+            "Region.TRIM": [
+                156,
+                137,
+                127,
+                138
+            ]
+        }
+    },
+    "rows_top": [
+        20,
+        70,
+        130,
+        180,
+        230
+    ],
+    "rows_bottom": [
+        30,
+        90,
+        150,
+        210,
+        270
+    ],
+    "region_readout_enable_masks": {
+        "bb": 15
+    },
+    "moss_dac_settings": {
+        "*": {
+            "IBIAS": 62,
+            "IBIASN": 100,
+            "IDB": 50,
+            "IRESET": 10,
+            "VCASN": 104,
+            "VSHIFT": 145,
+            "VCASB": [
+                20,
+                15,
+                15,
+                15
+            ]
+        }
+    }
+}

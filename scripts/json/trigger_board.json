@@ -1,0 +1,17 @@
+{
+	"SW_path":"/home/hipex/ITS3/trigger/software/",
+	"Port":"/dev/serial/by-id/usb-CERN_ITS3_Trigger_Board_0011-if01-port0",
+	"Threshold":
+	{
+		"ch0": "0.2",
+		"ch1": "0.2",
+		"ch2": "0.0",
+        "ch3": "0"
+	},
+	"Logic" : "trg0&!bsy",
+    "Monitor": "feedback_monitor.py",
+    "Log_path" : "/home/hipex/ITS3/trigger/templog",
+    "Monitor_ch":  "xxxx xxxR xxx1 xxRx xx1x xRxx x1xx Rxxx 1xxx",
+    "Nevents": "1000000"
+
+}

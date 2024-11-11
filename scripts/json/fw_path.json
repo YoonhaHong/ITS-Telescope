@@ -1,0 +1,9 @@
+{
+	"fpga_alpide": "~/ITS3/alpide-daq-software/tools/fpga-v1.0.0.bit",
+	"fx3_alpide": "~/ITS3/alpide-daq-software/tools/fx3.img",
+    "fpga_mlr1": "~/ITS3/apts-dpts-ce65-daq-software/tools/0x107E7316.bit",
+	"fx3_mlr1": "~/ITS3/apts-dpts-ce65-daq-software/tools/fx3.img",
+    "fpga_ce65": "~/ITS3/apts-dpts-ce65-daq-software/tools/daq_board_ce65v2_10m_230828.bit",
+    "fpga_moss": "~/fw/raiser-daq-fpga-firmware.bit",
+    "fx3_moss": "~/fw/fx3.img"
+}
