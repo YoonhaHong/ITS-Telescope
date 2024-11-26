@@ -1,0 +1,11 @@
+*.ipynb
+.ipynb_checkpoints/
+__pycache__/
+*/.DS_Store
+
+babymoss-daq-fpga-firmware/
+data/
+eudaq2/
+logs/
+trigger/
+sw/
