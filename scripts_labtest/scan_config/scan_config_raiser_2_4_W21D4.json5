@@ -1,0 +1,14 @@
+{
+    "ts_config": "/home/npl/babyMOSS/sw/config/tb_configs/ts_config_raiser_2_4_W21D4.json5",
+    "enabled_units": [ "tb", "bb" ],
+    "seed": "random",
+    "override_registers": {
+        "bb": {
+            "Region.TRIM": [0x8C, 0x8B, 0x8C, 0x9B]
+        },
+        "tb": {
+            "Region.TRIM": [0xBF, 0x8D, 0xBC, 0x8A]
+        }
+    },
+ 
+}

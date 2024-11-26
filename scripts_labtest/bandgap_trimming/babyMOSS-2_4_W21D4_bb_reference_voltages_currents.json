@@ -1,0 +1,102 @@
+[
+    {
+        "Region": 0,
+        "IREF": {
+            "Mean": 10.04597,
+            "Stdev": 0.00697
+        },
+        "VBGR": {
+            "Mean": 0.42433,
+            "Stdev": 0.00027
+        },
+        "VREF": {
+            "Mean": 0.55466,
+            "Stdev": 0.00062
+        },
+        "VDD13": {
+            "Mean": 0.51772,
+            "Stdev": 0.00041
+        },
+        "VDD23": {
+            "Mean": 0.80452,
+            "Stdev": 0.00045
+        },
+        "TRIM_volt": 8,
+        "TRIM_curr": 12
+    },
+    {
+        "Region": 1,
+        "IREF": {
+            "Mean": 10.23224,
+            "Stdev": 0.00697
+        },
+        "VBGR": {
+            "Mean": 0.42818,
+            "Stdev": 0.00036
+        },
+        "VREF": {
+            "Mean": 0.55958,
+            "Stdev": 0.00031
+        },
+        "VDD13": {
+            "Mean": 0.51741,
+            "Stdev": 0.00029
+        },
+        "VDD23": {
+            "Mean": 0.8038,
+            "Stdev": 0.00046
+        },
+        "TRIM_volt": 8,
+        "TRIM_curr": 11
+    },
+    {
+        "Region": 2,
+        "IREF": {
+            "Mean": 10.32179,
+            "Stdev": 0.00523
+        },
+        "VBGR": {
+            "Mean": 0.42581,
+            "Stdev": 0.00047
+        },
+        "VREF": {
+            "Mean": 0.55094,
+            "Stdev": 0.00046
+        },
+        "VDD13": {
+            "Mean": 0.51746,
+            "Stdev": 0.00056
+        },
+        "VDD23": {
+            "Mean": 0.80384,
+            "Stdev": 0.00046
+        },
+        "TRIM_volt": 8,
+        "TRIM_curr": 12
+    },
+    {
+        "Region": 3,
+        "IREF": {
+            "Mean": 9.97756,
+            "Stdev": 0.00806
+        },
+        "VBGR": {
+            "Mean": 0.42424,
+            "Stdev": 0.0005
+        },
+        "VREF": {
+            "Mean": 0.56307,
+            "Stdev": 0.0004
+        },
+        "VDD13": {
+            "Mean": 0.51844,
+            "Stdev": 0.00053
+        },
+        "VDD23": {
+            "Mean": 0.80412,
+            "Stdev": 0.00068
+        },
+        "TRIM_volt": 9,
+        "TRIM_curr": 11
+    }
+]

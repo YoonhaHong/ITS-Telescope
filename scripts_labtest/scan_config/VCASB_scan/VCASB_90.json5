@@ -1,0 +1,38 @@
+{
+    "ts_config": "/home/npl/babyMOSS/sw/config/tb_configs/ts_config_raiser_2_4_W21D4.json5",
+    "enabled_units": [
+        "tb",
+        "bb"
+    ],
+    "seed": "random",
+    "moss_dac_settings": {
+        "tb": {
+            "IBIAS": 62,
+            "IBIASN": 100,
+            "IDB": 25,
+            "IRESET": 10,
+            "VCASN": 104,
+            "VSHIFT": 145,
+            "VCASB": [
+                90,
+                90,
+                90,
+                90
+            ]
+        },
+        "bb": {
+            "IBIAS": 62,
+            "IBIASN": 100,
+            "IDB": 25,
+            "IRESET": 10,
+            "VCASN": 104,
+            "VSHIFT": 145,
+            "VCASB": [
+                90,
+                90,
+                90,
+                90
+            ]
+        }
+    }
+}
