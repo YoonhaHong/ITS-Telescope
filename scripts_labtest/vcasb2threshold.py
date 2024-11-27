@@ -145,21 +145,12 @@ def draw_vcasb_threshold(scan_collection_folder, print=False):
 
     # Show the plot
     if(print):
-        plt.savefig("VCASB-THR.pdf")
+        scan_name = os.path.basename(scan_collection_folder)
+        plt.savefig(f"VCASB-THR_{scan_name}.pdf")
         plt.show()
 
     return fit_parameters
 
-def vcasb2thr(fit_parameters, thr_range = range(10, 30, 1)):
-    arr_thr_vcasb = []
-    for threshold in thr_range:
-        for_each_thr = {}
-        for_each_thr['threshold'] = threshold
-        for region, value in fit_parameters.items():
-            vcasb = (threshold - fit_parameters[region]['intercept']) / fit_parameters[region]['slope']
-            for_each_thr[region] = int(vcasb)
-        arr_thr_vcasb.append( for_each_thr )
-    return arr_thr_vcasb
 
 
 def save_vcasb_txt(outpath, fit_parameters):
