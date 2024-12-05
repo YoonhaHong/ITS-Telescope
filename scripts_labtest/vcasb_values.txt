@@ -1,220 +1,220 @@
 ##### THRESHOLD = 10 ######
-tb_region0_VCASB = 106
-tb_region1_VCASB = 113
-tb_region2_VCASB = 114
-tb_region3_VCASB = 105
-bb_region0_VCASB = 103
-bb_region1_VCASB = 101
-bb_region2_VCASB = 108
-bb_region3_VCASB = 97
+tb_region0_VCASB = 100
+tb_region1_VCASB = 104
+tb_region2_VCASB = 107
+tb_region3_VCASB = 99
+bb_region0_VCASB = 96
+bb_region1_VCASB = 94
+bb_region2_VCASB = 101
+bb_region3_VCASB = 92
 
 
 ##### THRESHOLD = 11 ######
-tb_region0_VCASB = 104
-tb_region1_VCASB = 111
-tb_region2_VCASB = 113
-tb_region3_VCASB = 103
-bb_region0_VCASB = 101
-bb_region1_VCASB = 99
-bb_region2_VCASB = 106
-bb_region3_VCASB = 94
+tb_region0_VCASB = 98
+tb_region1_VCASB = 102
+tb_region2_VCASB = 105
+tb_region3_VCASB = 97
+bb_region0_VCASB = 94
+bb_region1_VCASB = 92
+bb_region2_VCASB = 99
+bb_region3_VCASB = 89
 
 
 ##### THRESHOLD = 12 ######
-tb_region0_VCASB = 102
-tb_region1_VCASB = 110
-tb_region2_VCASB = 111
-tb_region3_VCASB = 102
-bb_region0_VCASB = 99
-bb_region1_VCASB = 97
-bb_region2_VCASB = 104
-bb_region3_VCASB = 90
+tb_region0_VCASB = 96
+tb_region1_VCASB = 100
+tb_region2_VCASB = 104
+tb_region3_VCASB = 95
+bb_region0_VCASB = 92
+bb_region1_VCASB = 91
+bb_region2_VCASB = 97
+bb_region3_VCASB = 85
 
 
 ##### THRESHOLD = 13 ######
-tb_region0_VCASB = 101
-tb_region1_VCASB = 108
-tb_region2_VCASB = 109
-tb_region3_VCASB = 100
-bb_region0_VCASB = 97
-bb_region1_VCASB = 95
-bb_region2_VCASB = 102
-bb_region3_VCASB = 87
+tb_region0_VCASB = 94
+tb_region1_VCASB = 99
+tb_region2_VCASB = 102
+tb_region3_VCASB = 94
+bb_region0_VCASB = 91
+bb_region1_VCASB = 89
+bb_region2_VCASB = 95
+bb_region3_VCASB = 82
 
 
 ##### THRESHOLD = 14 ######
-tb_region0_VCASB = 99
-tb_region1_VCASB = 106
-tb_region2_VCASB = 107
-tb_region3_VCASB = 98
-bb_region0_VCASB = 95
-bb_region1_VCASB = 93
-bb_region2_VCASB = 100
-bb_region3_VCASB = 84
-
-
-##### THRESHOLD = 15 ######
-tb_region0_VCASB = 97
-tb_region1_VCASB = 104
-tb_region2_VCASB = 105
-tb_region3_VCASB = 97
-bb_region0_VCASB = 93
-bb_region1_VCASB = 91
-bb_region2_VCASB = 98
-bb_region3_VCASB = 81
-
-
-##### THRESHOLD = 16 ######
-tb_region0_VCASB = 95
-tb_region1_VCASB = 102
-tb_region2_VCASB = 104
-tb_region3_VCASB = 95
-bb_region0_VCASB = 91
-bb_region1_VCASB = 89
-bb_region2_VCASB = 96
+tb_region0_VCASB = 93
+tb_region1_VCASB = 97
+tb_region2_VCASB = 100
+tb_region3_VCASB = 92
+bb_region0_VCASB = 89
+bb_region1_VCASB = 87
+bb_region2_VCASB = 93
 bb_region3_VCASB = 78
 
 
-##### THRESHOLD = 17 ######
-tb_region0_VCASB = 94
-tb_region1_VCASB = 101
-tb_region2_VCASB = 102
-tb_region3_VCASB = 93
-bb_region0_VCASB = 90
-bb_region1_VCASB = 87
-bb_region2_VCASB = 94
+##### THRESHOLD = 15 ######
+tb_region0_VCASB = 91
+tb_region1_VCASB = 95
+tb_region2_VCASB = 99
+tb_region3_VCASB = 90
+bb_region0_VCASB = 87
+bb_region1_VCASB = 85
+bb_region2_VCASB = 91
 bb_region3_VCASB = 75
 
 
+##### THRESHOLD = 16 ######
+tb_region0_VCASB = 89
+tb_region1_VCASB = 94
+tb_region2_VCASB = 97
+tb_region3_VCASB = 88
+bb_region0_VCASB = 85
+bb_region1_VCASB = 83
+bb_region2_VCASB = 89
+bb_region3_VCASB = 71
+
+
+##### THRESHOLD = 17 ######
+tb_region0_VCASB = 87
+tb_region1_VCASB = 92
+tb_region2_VCASB = 95
+tb_region3_VCASB = 87
+bb_region0_VCASB = 83
+bb_region1_VCASB = 81
+bb_region2_VCASB = 87
+bb_region3_VCASB = 67
+
+
 ##### THRESHOLD = 18 ######
-tb_region0_VCASB = 92
-tb_region1_VCASB = 99
-tb_region2_VCASB = 100
-tb_region3_VCASB = 91
-bb_region0_VCASB = 88
-bb_region1_VCASB = 86
-bb_region2_VCASB = 92
-bb_region3_VCASB = 72
+tb_region0_VCASB = 85
+tb_region1_VCASB = 90
+tb_region2_VCASB = 94
+tb_region3_VCASB = 85
+bb_region0_VCASB = 81
+bb_region1_VCASB = 79
+bb_region2_VCASB = 85
+bb_region3_VCASB = 64
 
 
 ##### THRESHOLD = 19 ######
-tb_region0_VCASB = 90
-tb_region1_VCASB = 97
-tb_region2_VCASB = 98
-tb_region3_VCASB = 90
-bb_region0_VCASB = 86
-bb_region1_VCASB = 84
-bb_region2_VCASB = 90
-bb_region3_VCASB = 69
-
-
-##### THRESHOLD = 20 ######
-tb_region0_VCASB = 88
-tb_region1_VCASB = 95
-tb_region2_VCASB = 97
-tb_region3_VCASB = 88
-bb_region0_VCASB = 84
-bb_region1_VCASB = 82
-bb_region2_VCASB = 88
-bb_region3_VCASB = 66
-
-
-##### THRESHOLD = 21 ######
-tb_region0_VCASB = 86
-tb_region1_VCASB = 93
-tb_region2_VCASB = 95
-tb_region3_VCASB = 86
-bb_region0_VCASB = 82
-bb_region1_VCASB = 80
-bb_region2_VCASB = 86
-bb_region3_VCASB = 63
-
-
-##### THRESHOLD = 22 ######
-tb_region0_VCASB = 85
-tb_region1_VCASB = 92
-tb_region2_VCASB = 93
-tb_region3_VCASB = 84
-bb_region0_VCASB = 80
-bb_region1_VCASB = 78
-bb_region2_VCASB = 84
+tb_region0_VCASB = 84
+tb_region1_VCASB = 88
+tb_region2_VCASB = 92
+tb_region3_VCASB = 83
+bb_region0_VCASB = 79
+bb_region1_VCASB = 77
+bb_region2_VCASB = 83
 bb_region3_VCASB = 60
 
 
-##### THRESHOLD = 23 ######
-tb_region0_VCASB = 83
-tb_region1_VCASB = 90
-tb_region2_VCASB = 91
-tb_region3_VCASB = 83
-bb_region0_VCASB = 78
-bb_region1_VCASB = 76
-bb_region2_VCASB = 82
+##### THRESHOLD = 20 ######
+tb_region0_VCASB = 82
+tb_region1_VCASB = 87
+tb_region2_VCASB = 90
+tb_region3_VCASB = 82
+bb_region0_VCASB = 77
+bb_region1_VCASB = 75
+bb_region2_VCASB = 81
 bb_region3_VCASB = 57
 
 
-##### THRESHOLD = 24 ######
-tb_region0_VCASB = 81
-tb_region1_VCASB = 88
-tb_region2_VCASB = 90
-tb_region3_VCASB = 81
-bb_region0_VCASB = 76
-bb_region1_VCASB = 74
-bb_region2_VCASB = 80
+##### THRESHOLD = 21 ######
+tb_region0_VCASB = 80
+tb_region1_VCASB = 85
+tb_region2_VCASB = 88
+tb_region3_VCASB = 80
+bb_region0_VCASB = 75
+bb_region1_VCASB = 73
+bb_region2_VCASB = 79
 bb_region3_VCASB = 53
 
 
-##### THRESHOLD = 25 ######
-tb_region0_VCASB = 79
-tb_region1_VCASB = 86
-tb_region2_VCASB = 88
-tb_region3_VCASB = 79
-bb_region0_VCASB = 74
-bb_region1_VCASB = 72
-bb_region2_VCASB = 78
-bb_region3_VCASB = 50
-
-
-##### THRESHOLD = 26 ######
+##### THRESHOLD = 22 ######
 tb_region0_VCASB = 78
-tb_region1_VCASB = 84
-tb_region2_VCASB = 86
+tb_region1_VCASB = 83
+tb_region2_VCASB = 87
 tb_region3_VCASB = 78
 bb_region0_VCASB = 73
 bb_region1_VCASB = 71
-bb_region2_VCASB = 76
-bb_region3_VCASB = 47
+bb_region2_VCASB = 77
+bb_region3_VCASB = 49
 
 
-##### THRESHOLD = 27 ######
-tb_region0_VCASB = 76
-tb_region1_VCASB = 83
-tb_region2_VCASB = 84
+##### THRESHOLD = 23 ######
+tb_region0_VCASB = 77
+tb_region1_VCASB = 81
+tb_region2_VCASB = 85
 tb_region3_VCASB = 76
 bb_region0_VCASB = 71
 bb_region1_VCASB = 69
-bb_region2_VCASB = 74
-bb_region3_VCASB = 44
+bb_region2_VCASB = 75
+bb_region3_VCASB = 46
+
+
+##### THRESHOLD = 24 ######
+tb_region0_VCASB = 75
+tb_region1_VCASB = 80
+tb_region2_VCASB = 83
+tb_region3_VCASB = 75
+bb_region0_VCASB = 70
+bb_region1_VCASB = 68
+bb_region2_VCASB = 73
+bb_region3_VCASB = 42
+
+
+##### THRESHOLD = 25 ######
+tb_region0_VCASB = 73
+tb_region1_VCASB = 78
+tb_region2_VCASB = 82
+tb_region3_VCASB = 73
+bb_region0_VCASB = 68
+bb_region1_VCASB = 66
+bb_region2_VCASB = 71
+bb_region3_VCASB = 39
+
+
+##### THRESHOLD = 26 ######
+tb_region0_VCASB = 71
+tb_region1_VCASB = 76
+tb_region2_VCASB = 80
+tb_region3_VCASB = 71
+bb_region0_VCASB = 66
+bb_region1_VCASB = 64
+bb_region2_VCASB = 69
+bb_region3_VCASB = 35
+
+
+##### THRESHOLD = 27 ######
+tb_region0_VCASB = 70
+tb_region1_VCASB = 74
+tb_region2_VCASB = 78
+tb_region3_VCASB = 69
+bb_region0_VCASB = 64
+bb_region1_VCASB = 62
+bb_region2_VCASB = 67
+bb_region3_VCASB = 31
 
 
 ##### THRESHOLD = 28 ######
-tb_region0_VCASB = 74
-tb_region1_VCASB = 81
-tb_region2_VCASB = 83
-tb_region3_VCASB = 74
-bb_region0_VCASB = 69
-bb_region1_VCASB = 67
-bb_region2_VCASB = 72
-bb_region3_VCASB = 41
+tb_region0_VCASB = 68
+tb_region1_VCASB = 73
+tb_region2_VCASB = 77
+tb_region3_VCASB = 68
+bb_region0_VCASB = 62
+bb_region1_VCASB = 60
+bb_region2_VCASB = 65
+bb_region3_VCASB = 28
 
 
 ##### THRESHOLD = 29 ######
-tb_region0_VCASB = 72
-tb_region1_VCASB = 79
-tb_region2_VCASB = 81
-tb_region3_VCASB = 72
-bb_region0_VCASB = 67
-bb_region1_VCASB = 65
-bb_region2_VCASB = 70
-bb_region3_VCASB = 38
+tb_region0_VCASB = 66
+tb_region1_VCASB = 71
+tb_region2_VCASB = 75
+tb_region3_VCASB = 66
+bb_region0_VCASB = 60
+bb_region1_VCASB = 58
+bb_region2_VCASB = 63
+bb_region3_VCASB = 24
 
 

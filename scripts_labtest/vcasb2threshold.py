@@ -34,7 +34,9 @@ def process_folder(folder_path):
     
     # Extract Threshold averages for each region from 'tb' and 'bb'
     threshold_tb = analysis_data['tb']['Threshold average per region']
+    noise_tb = analysis_data['tb']['Noise average per region']
     threshold_bb = analysis_data['bb']['Threshold average per region']
+    noise_bb = analysis_data['bb']['Noise average per region']
     
     # Combine the results for each region
     results = []
@@ -43,7 +45,8 @@ def process_folder(folder_path):
             
             'VCASB':        vcasb_tb[region_index],
             'region':       f"tb{region_index}",
-            'Threshold':    threshold_tb[region_index]
+            'Threshold':    threshold_tb[region_index],
+            'Noise':        noise_tb[region_index]
         }
         results.append(result)
     for region_index in range(len(vcasb_bb)): 
@@ -51,7 +54,8 @@ def process_folder(folder_path):
             
             'VCASB':        vcasb_bb[region_index],
             'region':       f"bb{region_index}",
-            'Threshold':    threshold_bb[region_index]
+            'Threshold':    threshold_bb[region_index],
+            'Noise':        noise_bb[region_index]
         }
         results.append(result)
     
@@ -59,7 +63,7 @@ def process_folder(folder_path):
     return results
 
 # Main function to iterate over all folders and process them
-def extract_vcasb_threshold(scan_collection_folder):
+def extract_vcasb_threshold(scan_collection_folder, csv=False):
     # Get a list of all subdirectories that match the pattern 'babyMOSS-2_4_W21D4_ThresholdScan_*'
     scan_folders = glob.glob(os.path.join(scan_collection_folder, 'babyMOSS-2_4_W21D4_ThresholdScan_*'))
     
@@ -67,20 +71,24 @@ def extract_vcasb_threshold(scan_collection_folder):
     
     # Process each folder
     for folder in scan_folders:
-        print(f"Processing folder: {folder}")
+        #print(f"Processing folder: {folder}")
         results = process_folder(folder)
         if results:
             all_results.extend(results)
     
     # Save the results to a CSV file
-    output_file = os.path.join(scan_collection_folder, "vcasb_threshold_results.csv")
-    with open(output_file, 'w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=['VCASB', 'region', 'Threshold'])
-        writer.writeheader()
-        writer.writerows(all_results)
-    print(f"Results saved to: {output_file}")
+    if csv:
+        output_file = os.path.join(scan_collection_folder, "vcasb_threshold_results.csv")
+        with open(output_file, 'w', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=['VCASB', 'region', 'Threshold', 'Noise'])
+            writer.writeheader()
+            writer.writerows(all_results)
+        print(f"Results saved to: {output_file}")
 
-def draw_vcasb_threshold(scan_collection_folder, print=False):
+    return pd.DataFrame(all_results)
+
+#def draw_vcasb_threshold(scan_collection_folder, print=False):
+def draw_vcasb_threshold(data, fig=False):
     colors = {
         'tb0': 'red',
         'tb1': 'orange',
@@ -92,8 +100,8 @@ def draw_vcasb_threshold(scan_collection_folder, print=False):
         'bb3': 'purple'
     }   
     fit_parameters = {}
-    csv_file = os.path.join(scan_collection_folder, "vcasb_threshold_results.csv")
-    data = pd.read_csv(csv_file)
+    #csv_file = os.path.join(scan_collection_folder, "vcasb_threshold_results.csv")
+    #data = pd.read_csv(csv_file)
 
     plt.figure(figsize=(10, 6))
 
@@ -107,46 +115,71 @@ def draw_vcasb_threshold(scan_collection_folder, print=False):
         region_data = data[data['region'] == region].sort_values(by='VCASB')
         x = region_data['VCASB']
         y = region_data['Threshold']
+        y_err = region_data['Noise']
+
         region_color = colors.get(region, 'black')
 
-        slope, intercept = np.polyfit(x, y, 1)
+
+        coeffs = np.polyfit(x, y, deg=1) 
+        fit_func = np.poly1d(coeffs)
+        slope = coeffs[0]  
+        intercept = coeffs[1]  
         fit_parameters[region] = {'slope': slope, 'intercept': intercept}
 
-        plt.scatter(x, y, label=f'{region}: y = {slope:.2f}x + {intercept:.2f}', 
-                    marker='o', color = region_color)
-        plt.plot(x, slope*x + intercept, color = region_color)
+        y_fit = fit_func(x)
+        residuals = (y - y_fit) / y_err
+        chi2 = np.sum(residuals**2)
+        ndf = len(x) - (1+1)
+        chi2_ndf = chi2 / ndf
+
+        plt.errorbar(x, y, yerr=y_err, 
+                    label=f'{region}: y = {slope:.2f}x + {intercept:.2f}    chi2 = {chi2:.3f}', 
+                    linestyle=' ', marker='o', color = region_color)
+        plt.plot(x, fit_func(x), color = region_color)
 
     # Plot for bb regions
     for region in regions_bb:
         region_data = data[data['region'] == region].sort_values(by='VCASB')
         x = region_data['VCASB']
         y = region_data['Threshold']
+        y_err = region_data['Noise']
         region_color = colors.get(region, 'black')
 
-        slope, intercept = np.polyfit(x, y, 1)
+        coeffs = np.polyfit(x, y, deg=1) 
+        fit_func = np.poly1d(coeffs)
+        slope = coeffs[0]  
+        intercept = coeffs[1]  
         fit_parameters[region] = {'slope': slope, 'intercept': intercept}
 
-        plt.scatter(x, y, label=f'{region}: y = {slope:.2f}x + {intercept:.2f}', 
-                    marker='o', color = region_color)
-        plt.plot(x, slope*x + intercept, color = region_color)
+        y_fit = fit_func(x)
+        residuals = (y - y_fit) / y_err
+        chi2 = np.sum(residuals**2)
+        #pearson = (y-y_fit)**2 / y_fit
+        #chi2 = np.sum(pearson)
+        ndf = len(x) - (1+1)
+        chi2_ndf = chi2 / ndf
+
+        plt.errorbar(x, y, yerr=y_err, 
+                    label=f'{region}: y = {slope:.2f}x + {intercept:.2f}    chi2 = {chi2:.3f}', 
+                    linestyle=' ', marker='o', color = region_color)
+        plt.plot(x, fit_func(x), color = region_color)
 
 
-    # Adding title and labels
     plt.title('VCASB vs Threshold for Each Region', fontsize=14)
     plt.xlabel('VCASB', fontsize=12)
     plt.ylabel('Threshold', fontsize=12)
+    plt.ylim(5, 40)
 
-    # Display the legend
-    plt.legend(title="Regions", loc='best')
+    plt.legend(loc='best')
 
-    # Display the grid
     plt.grid(True)
     plt.tight_layout()
 
     # Show the plot
-    if(print):
-        scan_name = os.path.basename(scan_collection_folder)
-        plt.savefig(f"VCASB-THR_{scan_name}.pdf")
+    if(fig):
+        fig_name = f"VASB-THR_{os.path.basename(args.scan_collection_folder)}.pdf"
+        plt.savefig( fig_name )
+        print(f"Saved as {fig_name}")
         plt.show()
 
     return fit_parameters
@@ -177,8 +210,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    if not os.path.exists(os.path.join(args.scan_collection_folder, "vcasb_threshold_results.csv")):
-        extract_vcasb_threshold(args.scan_collection_folder)
-    fit_parameters = draw_vcasb_threshold(args.scan_collection_folder, print=True)
-    save_vcasb_txt(".", fit_parameters)
+
+    all_results = extract_vcasb_threshold(args.scan_collection_folder)
+    fit_parameters = draw_vcasb_threshold(all_results, fig=True)
+    #save_vcasb_txt(".", fit_parameters)
 
