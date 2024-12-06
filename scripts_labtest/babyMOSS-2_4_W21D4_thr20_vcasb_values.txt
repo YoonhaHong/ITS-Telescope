@@ -1,0 +1,12 @@
+##### babyMOSS-2_4_W21D4 ######
+##### THRESHOLD = 20 ######
+tb_region0_VCASB = 89
+tb_region1_VCASB = 95
+tb_region2_VCASB = 97
+tb_region3_VCASB = 88
+bb_region0_VCASB = 84
+bb_region1_VCASB = 82
+bb_region2_VCASB = 88
+bb_region3_VCASB = 66
+
+

@@ -1,6 +1,7 @@
 import argparse
 import json5
 import os
+import re
 import glob
 import csv
 import configparser
@@ -10,11 +11,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
+
+
 # Function to process each folder and extract VCASB and Thresholds
 def process_folder(folder_path):
     # Paths to the JSON files
     config_file = os.path.join(folder_path, "config", "scan_config.json5")
     analysis_file = os.path.join(folder_path, "analysis", "analysis_result.json5")
+
+
     
     if not os.path.exists(config_file) or not os.path.exists(analysis_file):
         print(f"Missing files in folder: {folder_path}")
@@ -64,8 +69,16 @@ def process_folder(folder_path):
 
 # Main function to iterate over all folders and process them
 def extract_vcasb_threshold(scan_collection_folder, csv=False):
-    # Get a list of all subdirectories that match the pattern 'babyMOSS-2_4_W21D4_ThresholdScan_*'
-    scan_folders = glob.glob(os.path.join(scan_collection_folder, 'babyMOSS-2_4_W21D4_ThresholdScan_*'))
+    
+    global MOSS_ID 
+    match = re.search(r'babyMOSS-[^/]+', scan_collection_folder)
+    if match:
+        MOSS_ID = match.group(0)
+        print(MOSS_ID)
+    else:  
+        print("error")
+
+    scan_folders = glob.glob(os.path.join(scan_collection_folder, f'{MOSS_ID}_ThresholdScan_*'))
     
     all_results = []
     
@@ -78,7 +91,7 @@ def extract_vcasb_threshold(scan_collection_folder, csv=False):
     
     # Save the results to a CSV file
     if csv:
-        output_file = os.path.join(scan_collection_folder, "vcasb_threshold_results.csv")
+        output_file = os.path.join(scan_collection_folder, f"{MOSS_ID}_vcasb_threshold_results.csv")
         with open(output_file, 'w', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=['VCASB', 'region', 'Threshold', 'Noise'])
             writer.writeheader()
@@ -177,7 +190,7 @@ def draw_vcasb_threshold(data, fig=False):
 
     # Show the plot
     if(fig):
-        fig_name = f"VASB-THR_{os.path.basename(args.scan_collection_folder)}.pdf"
+        fig_name = f"{MOSS_ID}_VASB-THR_{os.path.basename(args.scan_collection_folder)}.pdf"
         plt.savefig( fig_name )
         print(f"Saved as {fig_name}")
         plt.show()
@@ -186,21 +199,43 @@ def draw_vcasb_threshold(data, fig=False):
 
 
 
-def save_vcasb_txt(outpath, fit_parameters):
-    threshold_range = range(10, 30, 1)
-    txt_file = os.path.join( outpath, 'vcasb_values.txt' )
+def save_vcasb_fixedthr_txt(threshold, outpath, fit_parameters):
+    txt_file = os.path.join( outpath, f'{MOSS_ID}_thr{threshold}_vcasb_values.txt' )
     with open(txt_file, 'w') as file:
-        for threshold in threshold_range:
-            file.write(f"##### THRESHOLD = {threshold} ######\n")
-            for region, value in fit_parameters.items():
-                vcasb = (threshold - fit_parameters[region]['intercept']) / fit_parameters[region]['slope']
-                file.write(f"{region[0:2]}_region{region[-1]}_VCASB = {int(vcasb)}\n") 
-                            #tb_region0_VCASB = value
-            file.write("\n\n")
 
-
+        file.write(f"##### {MOSS_ID} ######\n")
+        file.write(f"##### THRESHOLD = {threshold} ######\n")
+        for region, value in fit_parameters.items():
+            vcasb = (threshold - fit_parameters[region]['intercept']) / fit_parameters[region]['slope']
+            file.write(f"{region[0:2]}_region{region[-1]}_VCASB = {int(vcasb)}\n") 
+                        #tb_region0_VCASB = value
+        file.write("\n\n")
     print(f"Saved as {txt_file}" )
-            
+
+
+def save_vcasb_csv(outpath, fit_parameters):
+    threshold_range = range(15, 31, 1)
+    csv_file = os.path.join(outpath, f'{MOSS_ID}_vcasb_values.csv')
+
+    # CSV 파일 생성 및 열기
+    with open(csv_file, 'w', newline='') as file:
+        writer = csv.writer(file)
+        
+        # 헤더 작성
+        header = ["Threshold"] + [f"{region[0:2]}_region{region[-1]}" for region in fit_parameters.keys()]
+        writer.writerow(header)
+
+        # 데이터 작성
+        for threshold in threshold_range:
+            row = [threshold]  # Threshold 값 추가
+            for region in fit_parameters.keys():
+                vcasb = (threshold - fit_parameters[region]['intercept']) / fit_parameters[region]['slope']
+                row.append(int(vcasb))  # 각 region에 대한 VCASB 추가
+            writer.writerow(row)
+
+    print(f"Saved as {csv_file}")
+
+
 
 
 
@@ -213,5 +248,6 @@ if __name__ == "__main__":
 
     all_results = extract_vcasb_threshold(args.scan_collection_folder)
     fit_parameters = draw_vcasb_threshold(all_results, fig=True)
-    #save_vcasb_txt(".", fit_parameters)
+    save_vcasb_fixedthr_txt(threshold=20, outpath=".", fit_parameters=fit_parameters)
+    save_vcasb_csv(".", fit_parameters)
 
