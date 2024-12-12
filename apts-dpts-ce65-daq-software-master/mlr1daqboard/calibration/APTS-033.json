@@ -1,0 +1,17 @@
+{
+    "IDAC": {
+        "CE_COL_AP_IBIASN":             [0.0190,    1.74,   670  ],
+        "CE_MAT_AP_IBIAS4SF_DP_IBIASF": [0.38074,  41.55,  10500 ],
+        "CE_PMOS_AP_DP_IRESET":         [3.2e-05,   0.00,     2.0],
+        "AP_IBIASP_DP_IDB":             [0.0158,   -0.42,   400  ],
+        "AP_IBIAS3_DP_IBIAS":           [0.1183,    2.17,  1650  ]
+    },
+    "VDAC": {
+        "AP_SEL0":                      [0.03803,   4.30,  1200  ],
+        "AP_SEL1":                      [0.03806,   2.31,  1200  ],
+        "AP_VRESET":                    [0.03806,   3.11,  1200  ],
+        "CE_VOFFSET_AP_DP_VH":          [0.03805,   4.53,  1200  ],
+        "AP_VCASP_MUX0_DP_VCASB":       [0.03806,  -2.24,  1200  ],
+        "AP_VCASN_MUX1_DP_VCASN":       [0.03805,   0.36,  1200  ]
+    }
+}

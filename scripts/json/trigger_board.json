@@ -3,8 +3,8 @@
 	"Port":"/dev/serial/by-id/usb-CERN_ITS3_Trigger_Board_0011-if01-port0",
 	"Threshold":
 	{
-		"ch0": "0.2",
-		"ch1": "0.2",
+		"ch0": "0.01",
+		"ch1": "0.0",
 		"ch2": "0.0",
         "ch3": "0"
 	},

@@ -34,7 +34,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "-c", "--csv",
         type=str, nargs=2,
-        default=["../scripts_labtest/babyMOSS-2_4_W21D4_vcasb_values.csv", "../scripts_labtest/babyMOSS-2_4_W21D4_vcasb_values.csv"],
+        default=["../scripts_labtest/babyMOSS-2_4_W21D4_vcasb_values.csv", "../scripts_labtest/babyMOSS-3_4_W17E6_vcasb_values.csv"],
         help="VCASB value of DUT0 & DUT1"
     )
     parser.add_argument(

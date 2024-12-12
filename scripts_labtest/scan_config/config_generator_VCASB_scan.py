@@ -10,7 +10,7 @@ os.makedirs(output_folder, exist_ok=True)
 
 # Template for the JSON structure
 template_data = {
-    "ts_config": "/home/npl/babyMOSS/sw/config/tb_configs/ts_config_raiser_2_4_W21D4.json5",
+    "ts_config": "/home/hipex/Telescope/sw/config/tb_configs/ts_config_raiser_3_4_W17E6.json5",
     "enabled_units": ["tb", "bb"],
     "seed": "random",
     "moss_dac_settings": {

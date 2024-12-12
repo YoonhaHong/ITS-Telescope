@@ -1,0 +1,28 @@
+{
+    "proximity": "DPTS-0XX",
+
+    "ntrg": 10000,
+    "trg_ch": "AUX",
+    "trg_wait": 0,
+    "nseg": 100,
+
+    "only_pos": false,
+    "invert": false,
+    "fix_thresh": -1,
+
+    "vcasb": 300,
+    "vcasn": 300,
+    "ireset": 10,
+    "ibias": 100,
+    "ibiasn": 10,
+    "idb": 100,
+    "ibiasf": 0,
+    "vbb": -1.2,
+    "temperature": null,
+    "id": "TEMPLATE",
+
+    "comments": null,
+    "prefix": "dpts_source_",
+    "serial": null,
+    "log_level": "INFO"
+}

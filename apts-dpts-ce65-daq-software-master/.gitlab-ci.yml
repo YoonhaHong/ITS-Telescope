@@ -1,0 +1,33 @@
+image: "python:3.9"
+
+stages:
+  - lint
+
+before_script:
+  - python --version
+  - pip install pylint==3.1.1 pyusb pyyaml libusb1 numpy tqdm fire
+
+library:
+  stage: lint
+  script:
+    - > 
+      pylint --disable=W,C,R,E0401 mlr1daqboard/*.py opamp/*.py apts/*.py dpts/*.py
+      tools/mlr1-daq-program
+
+scripts:
+  stage: lint
+  script:
+    - pip install .
+    - > 
+      for dir in `ls -1 scripts`; do
+        pylint --disable=W,C,R,E0401 `find scripts/${dir} -name "*.py"`
+      done
+
+analysis:
+  stage: lint
+  script:
+    - pip install .
+    - > 
+      for dir in `ls -1 analysis`; do
+        pylint --disable=W,C,R,E0401 `find analysis/${dir} -name "*.py"`
+      done

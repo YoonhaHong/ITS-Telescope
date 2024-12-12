@@ -1,0 +1,12 @@
+##### babyMOSS-3_4_W17E6 ######
+##### THRESHOLD = 20 ######
+tb_region0_VCASB = 88
+tb_region1_VCASB = 91
+tb_region2_VCASB = 92
+tb_region3_VCASB = 87
+bb_region0_VCASB = 89
+bb_region1_VCASB = 83
+bb_region2_VCASB = 80
+bb_region3_VCASB = 64
+
+

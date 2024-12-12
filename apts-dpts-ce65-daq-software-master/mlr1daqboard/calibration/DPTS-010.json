@@ -1,0 +1,14 @@
+{
+    "IDAC": {
+        "CE_MAT_AP_IBIAS4SF_DP_IBIASF": [0.6829,  105.36, 10000],
+        "CE_PMOS_AP_DP_IRESET":         [0.0061,    0.31,    85],
+        "AP_IBIASP_DP_IDB":             [0.0111,    1.14,   450],
+        "AP_IBIAS4OPA_DP_IBIASN":       [0.0111,    1.60,   300],
+        "AP_IBIAS3_DP_IBIAS":           [0.0111,    0.52,   525]
+    },
+    "VDAC": {
+        "AP_VCASN_MUX1_DP_VCASN":       [0.06827,   5.19,  1200],
+        "AP_VCASP_MUX0_DP_VCASB":       [0.06827,   1.00,  1200],
+        "CE_VOFFSET_AP_DP_VH":          [0.06802,   5.81,  1200]
+    }
+}
