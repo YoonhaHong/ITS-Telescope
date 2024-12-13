@@ -8,7 +8,7 @@ from vcasb2threshold import extract_vcasb_threshold, draw_vcasb_threshold
 
 def modify_vcasb_values(conf, df, threshold, moss_idx):
     config = configparser.ConfigParser(allow_no_value=True, delimiters=("=", ":"))
-    config.optionxform = str  # 대소문자 구분
+    config.optionxform = str  
     config.read( conf )
 
     section = f"Producer.MOSSRAISER_{moss_idx}"
@@ -17,6 +17,10 @@ def modify_vcasb_values(conf, df, threshold, moss_idx):
             if "VCASB" in key:
                 new_vcasb = df[df['Threshold']==threshold][key[:-6]].iloc[0]
                 config[section][key] = str(new_vcasb)
+
+            # suppression for tokyo babyMOSS(idx=1)
+            if moss_idx==1 and key =="bb_region0_VCASB":
+                config[section][key] = str(50)
 
     else:
         print(f"Section [{section}] not found in {conf}.")
