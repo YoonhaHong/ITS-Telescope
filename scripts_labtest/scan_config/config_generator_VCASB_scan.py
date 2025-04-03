@@ -2,7 +2,7 @@ import json
 import os
 
 # Define the range of VCASB values
-vcasb_range = [70, 75, 80, 85, 90, 95]  
+vcasb_range = [70, 75, 80, 85, 90, 95, 100]  
 
 # Create a folder to save the modified JSON files
 output_folder = './VCASB_scan'

@@ -1,3 +1,0 @@
-mlr1daqboard/*.py @msuljic
-mlr1daqboard/opamp_decoder.py @russor
-mlr1daqboard/opamp_scope.py @senyukov @usavino

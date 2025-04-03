@@ -1,9 +1,6 @@
 {
-    "ts_config": "/home/hipex/Telescope/sw/config/tb_configs/ts_config_raiser_3_4_W17E6.json5",
-    "enabled_units": [
-        "tb",
-        "bb"
-    ],
+    "ts_config": "/home/hipex/Telescope/sw/config/tb_configs/ts_config_raiser_2_4_W21D4.json5",
+    "enabled_units": ["tb", "bb"],
     "seed": "random",
     "moss_dac_settings": {
         "tb": {
@@ -13,12 +10,7 @@
             "IRESET": 10,
             "VCASN": 104,
             "VSHIFT": 145,
-            "VCASB": [
-                70,
-                70,
-                70,
-                70
-            ]
+            "VCASB": [30, 30, 30, 30]
         },
         "bb": {
             "IBIAS": 62,
@@ -27,12 +19,7 @@
             "IRESET": 10,
             "VCASN": 104,
             "VSHIFT": 145,
-            "VCASB": [
-                70,
-                70,
-                70,
-                70
-            ]
+            "VCASB": [30, 30, 30, 30]
         }
     }
 }

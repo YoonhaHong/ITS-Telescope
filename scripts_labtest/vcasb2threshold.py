@@ -181,7 +181,7 @@ def draw_vcasb_threshold(data, fig=False):
     plt.title('VCASB vs Threshold for Each Region', fontsize=14)
     plt.xlabel('VCASB', fontsize=12)
     plt.ylabel('Threshold', fontsize=12)
-    plt.ylim(5, 40)
+    plt.ylim(5, 70)
 
     plt.legend(loc='best')
 
@@ -248,6 +248,6 @@ if __name__ == "__main__":
 
     all_results = extract_vcasb_threshold(args.scan_collection_folder)
     fit_parameters = draw_vcasb_threshold(all_results, fig=True)
-    save_vcasb_fixedthr_txt(threshold=20, outpath=".", fit_parameters=fit_parameters)
+    save_vcasb_fixedthr_txt(threshold=30, outpath=".", fit_parameters=fit_parameters)
     save_vcasb_csv(".", fit_parameters)
 
